@@ -16,12 +16,11 @@ export default class Login extends Component {
     }
     onSubmit(e)
     {
-        console.log("Hello")
         const List = {
             email: this.refs.email.value,
             password: this.refs.password.value
         }
-        console.log(List);
+        //console.log(List);
         this.logIn(List);
         e.preventDefault();
     }
