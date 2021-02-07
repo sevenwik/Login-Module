@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect, Link } from "react-router-dom";
 import axios from 'axios';
 
 export default class Login extends Component {
@@ -10,6 +11,7 @@ export default class Login extends Component {
             data: cred
         }).then(response=>{
             console.log(response.data);
+            window.location.href = "/homepage";
         }).catch(error => {
             console.log(error.response)
         });
@@ -24,8 +26,11 @@ export default class Login extends Component {
         this.logIn(List);
         e.preventDefault();
     }
+
     render() {
+        const hello="bitches";
         return (
+            <div>
             <form onSubmit={this.onSubmit.bind(this)}>
 
                 <h3>Log in</h3>
@@ -52,6 +57,7 @@ export default class Login extends Component {
                     Forgot <a href="#">password?</a>
                 </p>
             </form>
+            </div>
         );
     }
 }
