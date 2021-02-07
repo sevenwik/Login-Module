@@ -13,7 +13,7 @@ export default class SignUp extends Component {
             data: info
         }).then(response=>{
             console.log(response);
-            window.location.href = "/sign-in";
+            this.props.history.push("/sign-in");
         }).catch(error => {
             console.log(error.response)
         });

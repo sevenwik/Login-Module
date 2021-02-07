@@ -30,10 +30,10 @@ function App() {
       <div className="outer">
         <div className="inner">
           <Switch>
-            <Route exact path='/' component={Login} />
-            <Route path="/sign-in" component={Login} />
-            <Route path="/sign-up" component={SignUp} />
-            <Route path="/homepage" component={HomePage} />
+            <Route path='/' exact render={props=><Login {...props}/>}/>
+            <Route path="/sign-in" exact render={props=><Login {...props}/>}/>
+            <Route path="/sign-up" exact render={props=><SignUp {...props}/>}/>
+            <Route path="/homepage" exact render={props=><HomePage {...props}/>}/>
           </Switch>
         </div>
       </div>

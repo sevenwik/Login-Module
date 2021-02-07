@@ -11,7 +11,10 @@ export default class Login extends Component {
             data: cred
         }).then(response=>{
             console.log(response.data);
-            window.location.href = "/homepage";
+            this.props.history.push({
+                pathname:"/homepage",
+                state:{ detail:response.data }
+            });
         }).catch(error => {
             console.log(error.response)
         });
