@@ -1,7 +1,7 @@
 
 module.exports =(sequelize,Sequelize) =>{
     const User = sequelize.define(
-    'Users',
+    'users',
     {
         id:{
             type: Sequelize.UUIDV4,
