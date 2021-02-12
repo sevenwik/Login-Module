@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import axios from 'axios';
+const { REACT_APP_API_URL } = process.env;
 
 export default class Login extends Component {
     logIn(cred)
     {
         axios.request({
             method:'post',
-            url:'http://localhost:8080/api/auth/sign-in',
+            url:`${REACT_APP_API_URL}/api/auth/sign-in`,
             data: cred
         }).then(response=>{
-            console.log(response.data);
+            //console.log(response.data);
             this.props.history.push({
                 pathname:"/homepage",
                 state:{ detail:response.data }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import { Redirect } from "react-router";
-import Login from "./login.component";
+const { REACT_APP_API_URL } = process.env;
 
 export default class SignUp extends Component {
     
@@ -9,10 +8,10 @@ export default class SignUp extends Component {
     {      
         axios.request({
             method:'post',
-            url:'http://localhost:8080/api/auth/sign-up',
+            url:`${REACT_APP_API_URL}/api/auth/sign-up`,
             data: info
         }).then(response=>{
-            console.log(response);
+           // console.log(response);
             this.props.history.push("/sign-in");
         }).catch(error => {
             console.log(error.response)
@@ -27,6 +26,7 @@ export default class SignUp extends Component {
             password: this.refs.password.value
         }
         //console.log(List);
+        console.log(REACT_APP_API_URL)
         this.register(List)
         e.preventDefault()
     }
